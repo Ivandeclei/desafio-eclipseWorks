@@ -1,0 +1,39 @@
+services:
+  mssql-server: 
+    container_name: sql-server-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "SuperPassword@123"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./dados/volumes/sqlserver:/var/opt/mssql/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "sqlcmd -S localhost -U SA -P 'SuperPassword@123' -Q 'SELECT 1'"]
+      interval: 10s
+      retries: 10
+      start_period: 40s
+      timeout: 5s
+
+  gerenciamentoapplication:
+    image: ${DOCKER_REGISTRY-}gerenciamentoapplication
+    build:
+      context: .
+      dockerfile: GerenciamentoApplication/Dockerfile
+    ports:
+      - "44347:44347"
+    environment:
+      DB_CONNECTION: "Server=mssql-server;Database=gerenciamento;TrustServerCertificate=true;User Id=SA;Password=SuperPassword@123;"
+    depends_on:
+      - mssql-server
+    volumes:
+      - ./migrations:/app/migrations
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

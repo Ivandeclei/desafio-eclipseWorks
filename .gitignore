@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/gerenciamento/GerenciamentoApplication/Gerenciamento.Application.Tests/bin/Debug/net8.0
+/gerenciamento/GerenciamentoApplication/Gerenciamento.Application.Tests/obj
+/gerenciamento/GerenciamentoApplication/Gerenciamento.DbAdapter/bin/Debug/net8.0
+/gerenciamento/GerenciamentoApplication/Gerenciamento.DbAdapter/obj
+/gerenciamento/GerenciamentoApplication/Gerenciamento.Application/obj
+/gerenciamento/GerenciamentoApplication/Gerenciamento.Application/bin/Debug/net8.0
+/gerenciamento/GerenciamentoApplication/bin/Debug
+/gerenciamento/GerenciamentoApplication/.vs/GerenciamentoApplication/DesignTimeBuild
+/gerenciamento/GerenciamentoApplication/.vs/GerenciamentoApplication/FileContentIndex
+/gerenciamento/GerenciamentoApplication/.vs/GerenciamentoApplication/v17/TestStore/0
+/gerenciamento/GerenciamentoApplication/.vs/GerenciamentoApplication/v17
+/gerenciamento/GerenciamentoApplication/.vs/ProjectEvaluation
+/gerenciamento/GerenciamentoApplication/Gerenciamento.Domain/obj
+/gerenciamento/GerenciamentoApplication/GerenciamentoApplication/bin/Debug/net8.0
+/gerenciamento/GerenciamentoApplication/GerenciamentoApplication/obj
+/gerenciamento/GerenciamentoApplication/obj
